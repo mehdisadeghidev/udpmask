@@ -1,0 +1,10 @@
+---
+version: "3"
+
+services:
+  udpmask:
+    image: ghcr.io/mehdisadeghidev/udpmask:latest
+    restart: unless-stopped
+    ports:
+      - 443:443/udp
+    command: -m server -p 443  -c [host-to-transfer-traffic-to] -o [port-to-transfer-traffic-to]
